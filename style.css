@@ -1,0 +1,109 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'EB Garamond', serif;
+}
+
+.contenedor {
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 30% 70%;
+}
+
+.columna1 {
+  background: linear-gradient(#00f, #55a);
+  color: #fff;
+}
+
+.columna2 {
+  background-color: #fff;
+}
+
+/* Columna 1 */
+
+.cabecera,.datospersonales,.interes,.idioma{
+    margin: 1rem;
+}
+.cabecera {
+  text-shadow: 5px 5px 10px #000;
+  font-family: 'Bebas Neue', cursive;
+}
+.self {
+  width: 100%;
+  height: 15rem;
+  padding-left: 12%;
+}
+.selfie {
+  height: 15rem;
+  object-fit:cover;
+  border-radius: 25% 0 25% 0;
+  box-shadow: 5px 5px 10px #000;
+  background: linear-gradient(#fff,#000);
+
+}
+.datospersonales h2,.intereses,.idiomas{
+  /* background-color: #00A; */
+  border-top: 2px solid #000;
+  text-shadow: 5px 5px 10px #000;
+  margin: 1rem  0;
+  padding-top: .75rem;
+}
+
+.datospersonales .datos,.interes li,.idioma li{
+    padding-left: 1rem;
+}
+
+/* Columna 2 */
+
+.experiencias,
+.estudios,
+.habilidades {
+  background-color: #bbb;
+  text-shadow: 1px 1px 2px #fff;
+}
+
+.perfil,.experiencia,.estudio,.habilidad{
+    padding: 2rem 1rem 1rem 1rem;
+}
+
+.columna2 div p{
+    padding-right: 2rem;
+    text-align: justify;
+    text-indent: 2rem;
+}
+
+.columna2 div li{
+    list-style: none;
+    padding-left: 4rem;
+    text-align: right;
+}
+
+.habilidad{
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-auto-rows: auto;
+}
+.habilidad h2:first-child{
+    grid-column: 1/-1;
+    grid-row: 1/1;
+}
+.habilidades,.estudios,.experiencias{
+    margin-bottom: 1rem;
+}
+.div{
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+.div li{
+    text-align: right;
+}
+div .star{
+    width: 80%;
+    height: 21px;
+    align-items: center;
+    padding-left: 1rem;
+}
+.star img{
+    height: 50%;
+}

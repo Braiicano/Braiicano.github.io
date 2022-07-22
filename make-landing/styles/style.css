@@ -1,0 +1,33 @@
+*{
+  /*font: 80% sans-serif;*/
+  margin: 0;
+  padding:0;
+  box-sizing: border-box;
+  cursor:default;
+}
+h1,h2{
+  margin:0;
+}
+.container{
+  width:100vw;
+  height:100vh;
+  display:flex;
+  flex-direction:column;
+  align-content:center;
+  align-items:center;
+  justify-content:center;
+}
+
+.title{
+  color: #11A;
+  font-size: 60px;
+  /*text-decoration: underline 5px;*/
+  text-shadow: 1px 1px 5px #000;
+  border-bottom: 5px solid #11A;
+  line-height: .92;
+}
+
+.subtitle{
+  font-size: 30px;
+  letter-spacing: 1px;
+}
