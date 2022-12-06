@@ -1,0 +1,154 @@
+@use 'common'
+@use 'func'
+
+*
+    text-align: justify
+html
+    background: linear-gradient(0deg, common.$bg-alpha,common.$bg-alpha),url('../static/keyboard.jpg') center fixed no-repeat
+    background-size: cover
+
+section
+    display: flex
+    height: 100vh
+    &#section1
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        position: absolute
+        z-index: 10
+        right: 0
+        left: 0
+        height: 80vh
+        h1
+            padding-left: common.$font-size
+            padding-bottom: calc(common.$font-size * 3)
+        p
+            line-height: calc( common.$font-size * 1.7 )
+            padding-left: .5rem
+            padding-right: .5rem
+            a:hover b
+                transition-duration: .25s
+                color: common.$hover-alpha
+                text-shadow: 0 0 50px #df251f80
+        h2
+            width: 320px
+            margin: calc(common.$font-size/2)
+            padding: calc( common.$font-size / 2 )
+            text-align: center
+            span
+                font-size: calc(common.$font-size*1.5)
+                height: fit-content
+
+    &#section2
+        position: absolute
+        top: 0
+        left: 0
+        right: 0
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        visibility: hidden
+        opacity: 0
+        transition-property: visibility opacity
+        transition-duration: 1s
+        background-color: common.$bg-color
+        .btn
+            position: inherit
+            top: 5%
+            right: 5%
+            font-size: calc( common.$font-size * 2 )
+            a
+                transition-duration: .5s
+                &:hover
+                    text-shadow: 0 0 200px #fff
+                    color: common.$hover-color
+                &:active
+                    color: #fff
+        h1
+            margin: common.$font-size 0
+        .skills
+            display: grid
+            grid-template-columns: repeat(auto-fill,minmax(300px,1fr))
+            justify-items: center
+            gap: common.$font-size
+            width: 95%
+            max-width: common.$max-width
+            height: 80%
+            overflow-y: scroll
+            &::-webkit-scrollbar
+                background-color: common.$item-color
+                border-radius: common.$font-size
+                width: .4rem
+            &::-webkit-scrollbar-thumb
+                background-color: common.$font-color
+                border-radius: common.$font-size
+            .cards
+                width: 300px
+                height: 350px
+                border: 1px solid #000
+                border-radius: common.$font-size
+                *
+                    text-align: center
+                .title
+                    padding: calc(common.$font-size/2) 0
+                    background-color: #25252580
+                    border-top-left-radius: common.$font-size
+                    border-top-right-radius: common.$font-size
+                &#py
+                    @include func.background('python.png')
+                &#js
+                    @include func.background('nodejs.png')
+                &#sass
+                    @include func.background('sass.png')
+                &#mysql
+                    @include func.background('mysql.png')
+                &#sqla
+                    @include func.background('sqla.png')
+                &#vim
+                    @include func.background('vim.png')
+                &#bs
+                    @include func.background('bootstrap.png')
+                &#bw
+                    @include func.background('bootswatch.svg')
+                &#go
+                    @include func.background('golang.svg')
+                &#ruby
+                    @include func.background('ruby.png')
+                &#design
+                    @include func.background('html.png')
+                .content
+                    padding: 0 calc(common.$font-size/3)
+                    display: flex
+                    flex-direction: column
+                    align-items: flex-start
+                    justify-content: flex-end
+                    width: 100%
+                    height: 75%
+                    &>div
+                        visibility: hidden
+                        &>div.init
+                            width: 0 !important
+                    ul>p
+                        text-align: left
+                        text-decoration: underline
+                    ul>li
+                        text-align: left
+                        padding-left: 1rem
+
+                    .progress
+                        visibility: initial !important
+                        width: 100%
+                        height: 1.2rem
+                        border: 1px solid common.$item-alpha
+                        border-radius: .25rem
+                        background-color: common.$font-color
+                        &__bar
+                            height: 100%
+                            background: common.$item-alpha
+                            display: flex
+                            align-items: center
+                            transition: width 1.5s
+                            border-radius: .25rem
+                            &__text
+                                margin-left: 1rem
+                                font-weight: bold

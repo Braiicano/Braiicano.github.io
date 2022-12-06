@@ -1,0 +1,58 @@
+@use 'common'
+
+// @mixin flex($dir:row,$justify:space-evenly,$align:center,$wrap:nowrap)
+//     display: flex
+//     flex-direction: $dir
+//     justify-content: $justify
+//     align-items: $align
+//     flex-wrap: $wrap
+
+// @mixin pos($position:relative,$width:100%,$height:initial,$top:0,$left:0,$zindex:0)
+//     position: $position
+//     width: $width
+//     height: $height
+//     top: $top
+//     left: $left
+//     z-index: $zindex
+
+// @mixin hover($padding:.2rem,$color:common.$bg-color)
+//     text-shadow: .5rem 0 .1rem common.$hover-color, -.5rem 0 .1rem $color
+//     padding-bottom: $padding
+//     font-weight: 500
+
+@mixin background($url)
+    background-attachment: fixed
+    // background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    background: linear-gradient(90deg,#25252580,#17171780),url('../static/icons/'+$url) center/80% no-repeat
+
+.neon
+    margin: calc(common.$font-size*2) !important
+    background-color: common.$bg-color
+    border-radius: calc(common.$font-size/2)
+    animation-name: neon-effect
+    animation-delay: 2s
+    animation-duration: 6s
+    animation-iteration-count: infinite
+    animation-direction: alternate-reverse
+@keyframes neon-effect
+    0%
+        box-shadow: 0 0 common.$font-size calc( common.$font-size / 4 ) #f00, 0 0 calc( common.$font-size / 4 ) calc( common.$font-size / 8 ) #f55
+    20%
+        box-shadow: 0 0 common.$font-size calc( common.$font-size / 4 ) #ff0, 0 0 calc( common.$font-size / 4 ) calc( common.$font-size / 8 ) #5f5
+    40%
+        box-shadow: 0 0 common.$font-size calc( common.$font-size / 4 ) #00f, 0 0 calc( common.$font-size / 4 ) calc( common.$font-size / 8 ) #55f
+    60%
+        box-shadow: 0 0 common.$font-size calc( common.$font-size / 4 ) #f00, 0 0 calc( common.$font-size / 4 ) calc( common.$font-size / 8 ) #f55
+    80%
+        box-shadow: 0 0 common.$font-size calc( common.$font-size / 4 ) #ff0, 0 0 calc( common.$font-size / 4 ) calc( common.$font-size / 8 ) #5f5
+    100%
+        box-shadow: 0 0 common.$font-size calc( common.$font-size / 4 ) #00f, 0 0 calc( common.$font-size / 4 ) calc( common.$font-size / 8 ) #55f
+
+.appear
+    z-index: 20
+    opacity: 1 !important
+    visibility: initial !important
+    transition-property: visibility opacity
+    transition-duration: 1s
