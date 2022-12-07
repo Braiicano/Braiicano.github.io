@@ -1,24 +1,20 @@
 @use 'common'
 
-// @mixin flex($dir:row,$justify:space-evenly,$align:center,$wrap:nowrap)
-//     display: flex
-//     flex-direction: $dir
-//     justify-content: $justify
-//     align-items: $align
-//     flex-wrap: $wrap
+@mixin flex($justify:center,$align:center,$item:center,$direction:column,$wrap:nowrap)
+    display: flex
+    justify-content: $justify
+    align-content: $align
+    align-items: $item
+    flex-direction: $direction
+    flex-wrap: $wrap
 
-// @mixin pos($position:relative,$width:100%,$height:initial,$top:0,$left:0,$zindex:0)
-//     position: $position
-//     width: $width
-//     height: $height
-//     top: $top
-//     left: $left
-//     z-index: $zindex
-
-// @mixin hover($padding:.2rem,$color:common.$bg-color)
-//     text-shadow: .5rem 0 .1rem common.$hover-color, -.5rem 0 .1rem $color
-//     padding-bottom: $padding
-//     font-weight: 500
+@mixin position($pos:'inherit',$top:0,$left:0,$right:'none',$bottom:'none',$zindex:10)
+    position: $pos
+    top: $top
+    left: $left
+    right: $right
+    bottom: $bottom
+    z-index: $zindex
 
 @mixin background($url)
     background-attachment: fixed
@@ -56,3 +52,73 @@
     visibility: initial !important
     transition-property: visibility opacity
     transition-duration: 1s
+
+@keyframes text-shadow
+    0%
+        text-shadow: 0 0 1rem #ff0000, 0 0 .25rem #550000
+    20%
+        text-shadow: 0 0 1rem #fff000, 0 0 .25rem #555000
+    40%
+        text-shadow: 0 0 1rem #00ff00, 0 0 .25rem #005500
+    60%
+        text-shadow: 0 0 1rem #000fff, 0 0 .25rem #000555
+    80%
+        text-shadow: 0 0 1rem #f000ff, 0 0 .25rem #500055
+    100%
+        text-shadow: 0 0 1rem #f0ff00, 0 0 .25rem #505500
+
+.front_open
+    --left-init: -120vw
+    --left-end: 0
+    animation-name: mid_open
+    animation-duration: 1s
+    animation-timing-function: ease-in
+    animation-fill-mode: forwards
+.front_close
+    --left-init: -120vw
+    --left-end: 0
+    animation-name: mid_close
+    animation-duration: .8s
+    animation-timing-function: ease-in
+    animation-fill-mode: forwards
+    animation-delay: 1.2s
+.front_open::before
+    --left-init: 240vw
+    --left-end: 0
+    animation-name: mid_open
+    animation-duration: 1s
+    animation-timing-function: ease-in
+    animation-fill-mode: forwards
+    animation-delay: 0.3s
+.front_close::before
+    --left-init: 240vw
+    --left-end: 0
+    animation-name: mid_close
+    animation-duration: .8s
+    animation-timing-function: ease-in
+    animation-fill-mode: forwards
+    animation-delay: .7s
+.front_open>*
+    opacity: 1
+    transition-property: opacity
+    transition-duration: 1s
+    transition-delay: 1.5s
+
+.front_close>*
+    opacity: 0
+    transition-property: opacity
+    transition-duration: .5s
+
+@keyframes mid_open
+    0%
+        left: var(--left-init)
+
+    100%
+        left: var(--left-end)
+
+@keyframes mid_close
+    0%
+        left: var(--left-end)
+
+    100%
+        left: var(--left-init)

@@ -34,7 +34,7 @@
         <main>
             <section id="section1">
                 <div class="title">
-                    <h1>Hi, i'm <b>Braian Cano</b></h1>
+                    <h1>Hi, i'm <span style="width:80%" id="name"></span></h1>
                     <p>I work in <b>frontend</b> and <b>backend</b> area, i'm app creator, searching and
                         destroy
                         bugs.<br>I'm
@@ -45,14 +45,23 @@
                         python languaje and did not stop to continue learning new technologies.<br>Now, i learn Golang
                         and
                         Ruby. In
-                        the next one i show you my skills and proyects. <a onclick='appear("#section2")'
-                            href="#"><b>Click here ></b></a>
+                        the next one i show you my skills and proyects.
                     </p>
+                    <h6>
+                        <span id="continue"
+                            onclick='appear("#section2")'><span>C</span><span>l</span><span>i</span><span>c</span><span>k</span><span>
+                            </span><span>h</span><span>e</span><span>r</span><span>e</span><span>
+                            </span><span>t</span><span>o</span><span>
+                            </span><span>C</span><span>o</span><span>n</span><span>t</span><span>i</span><span>n</span><span>u</span><span>e</span></span>
+                    </h6>
                 </div>
                 <h2 class="neon"><span style="width:80%" id="typed"></span></h2>
             </section>
             <section class="section" id="section2">
-                <div class="btn"><a href="#" onclick="appear('#section2')">x</a></div>
+                <div class="btn">
+                    <div class="prev"><a href="#" onclick="appear('#section2')">prev</a></div>
+                    <div class="next"><a href="#" onclick="toggleFront('#section3','open')">next</a></div>
+                </div>
                 <h1>Skills</h1>
                 <div class="skills">
                     <div class="cards" id="py">
@@ -61,10 +70,11 @@
                         </div>
                         <div class="content">
                             <ul>
-                                <p>Frameworks:<br></p>
-                                <li>Django</li>
-                                <li>Flask</li>
+                                <h6>Frameworks:</h6>
+                                <li>Django,Flask</li>
                                 <li>SQLAlchemy - ORM</li>
+                                <a target="_blank"
+                                    href="https://www.pildorasinformaticas.es/"><em>→pildoras-informaticas</em></a>
                             </ul>
                             <p>Skill:</p>
                             <div tag="progress">
@@ -80,8 +90,11 @@
                             <h3>NodeJS</h3>
                         </div>
                         <div class="content">
-                            <p>To create micro-services, api's and servers</p>
-                            <p>skill:</p>
+                            <ul>
+                                <p>To create micro-services, api's and servers</p>
+                                <a target="_blank" href="https://www.youtube.com/watch?v=i3OdKwuBjeM"><em>→Fazt</em></a>
+                            </ul>
+                            <p>Skill:</p>
                             <div tag="progress">
                                 <div class="progress__bar init" style="width:75%">
                                     <span class="progres__bar__text">75%</span>
@@ -94,7 +107,13 @@
                             <h3>Golang</h3>
                         </div>
                         <div class="content">
-                            <p>skill:</p>
+                            <ul>
+                                <p>Now learning this language, to development big data, machine learning and user
+                                    control systems</p>
+                                <a href="https://www.youtube.com/watch?v=R_Ib7FRQUrA"
+                                    target="_blank"><em>→Roelcode</em></a>
+                            </ul>
+                            <p>Skill:</p>
                             <div tag="progress">
                                 <div class="progress__bar init" style="width:50%">
                                     <span class="progres__bar__text">50%</span>
@@ -107,7 +126,14 @@
                             <h3>Ruby</h3>
                         </div>
                         <div class="content">
-                            <p>skill:</p>
+                            <ul>
+                                <p>Now learning to create new web apps</p>
+                                <h6>Framework</h6>
+                                <li>Ruby on rails</li>
+                                <a target="_blank"
+                                    href="https://codigofacilito.com/cursos/rails"><em>→Codigofacilito</em></a>
+                            </ul>
+                            <p>Skill:</p>
                             <div tag="progress">
                                 <div class="progress__bar init" style="width:50%">
                                     <span class="progres__bar__text">50%</span>
@@ -120,7 +146,12 @@
                             <h3>MySQL</h3>
                         </div>
                         <div class="content">
-                            <p>skill:</p>
+                            <ul>
+                                <p>I managment sql and no-sql database, use MariaDB and MongoDB</p>
+                                <a target="_blank"
+                                    href="https://www.pildorasinformaticas.es/"><em>→pildoras-informaticas</em></a>
+                            </ul>
+                            <p>Skill:</p>
                             <div tag="progress">
                                 <div class="progress__bar init" style="width:80%">
                                     <span class="progres__bar__text">80%</span>
@@ -133,7 +164,13 @@
                             <h3>SQLAlchemy</h3>
                         </div>
                         <div class="content">
-                            <p>skill:</p>
+                            <ul>
+                                <p>It's a python-orm, to work with database as object model</p>
+                                <a target="_blank"
+                                    href="https://docs.sqlalchemy.org/en/14/orm/tutorial.html"><em>→SQLAlchemy
+                                        Docs</em></a>
+                            </ul>
+                            <p>Skill:</p>
                             <div tag="progress">
                                 <div class="progress__bar init" style="width:75%">
                                     <span class="progres__bar__text">75%</span>
@@ -146,7 +183,11 @@
                             <h3>Vim</h3>
                         </div>
                         <div class="content">
-                            <p>skill:</p>
+                            <ul>
+                                <p>My favorite text editor, i create some personal functions to simplify my coding</p>
+                                <a href="http://neovim.io/doc/" target="_blank"><em>→Neovim Docs</em></a>
+                            </ul>
+                            <p>Skill:</p>
                             <div tag="progress">
                                 <div class="progress__bar init" style="width:75%">
                                     <span class="progres__bar__text">75%</span>
@@ -159,7 +200,11 @@
                             <h3>Web design</h3>
                         </div>
                         <div class="content">
-                            <p>skill:</p>
+                            <ul>
+                                <p>All start with something, this is my begin, learned and work with them</p>
+                                <a href="https://www.youtube.com/c/soydalto" target="_blank"><em>→@SoyDalto</em></a>
+                            </ul>
+                            <p>Skill:</p>
                             <div tag="progress">
                                 <div class="progress__bar init" style="width:70%">
                                     <span class="progres__bar__text">70%</span>
@@ -172,7 +217,11 @@
                             <h3>Sass</h3>
                         </div>
                         <div class="content">
-                            <p>skill:</p>
+                            <ul>
+                                <p>I learned sass to level up own website styles</p>
+                                <a href="https://sass-lang.com/guide" target="_blank"><em>→Sass guide</em></a>
+                            </ul>
+                            <p>Skill:</p>
                             <div tag="progress">
                                 <div class="progress__bar init" style="width:60%">
                                     <span class="progres__bar__text">60%</span>
@@ -185,7 +234,13 @@
                             <h3>Bootstrap</h3>
                         </div>
                         <div class="content">
-                            <p>skill:</p>
+                            <ul>
+                                <p>This is a beauty tool, simplify struct web and easy to apply, therefore, i learned BS
+                                    framework</p>
+                                <a href="https://edutin.com/curso-de-bootstrap-4-3724"
+                                    target="_blank"><em>→Edutin</em></a>
+                            </ul>
+                            <p>Skill:</p>
                             <div tag="progress">
                                 <div class="progress__bar init" style="width:85%">
                                     <span class="progres__bar__text">85%</span>
@@ -198,7 +253,11 @@
                             <h3>Bootswatch</h3>
                         </div>
                         <div class="content">
-                            <p>skill:</p>
+                            <ul>
+                                <p>Other favorite tool to give styles to web</p>
+                                <a href="https://bootswatch.com" target="_blank"><em>→Bootswatch guide</em></a>
+                            </ul>
+                            <p>Skill:</p>
                             <div tag="progress">
                                 <div class="progress__bar init" style="width:90%">
                                     <span class="progres__bar__text">90%</span>
@@ -206,25 +265,55 @@
                             </div>
                         </div>
                     </div>
-
+                </div>
+            </section>
+            <section class="section front_close" id="section3">
+                <div class="btn">
+                    <div class="prev"><a href="#" onclick="toggleFront('#section3','close')">prev</a></div>
+                    <div class="next"><a href="#" onclick="appear('#section3')">next</a></div>
+                </div>
+                <h2>Proyects</h2>
+                <div class="proyects">
+                    <div class="proyects__content">
+                        <div class="proyects__content__item">
+                            <h3>Gesven</h3>
+                            <p>Webapp to manage business data, stock control, checker sell data, give invoice.</p>
+                            <a href="http://www.gesven.net" target="_blank">
+                                <img src="./static/gesven.jpg" alt="gesven">
+                            </a>
+                        </div>
+                        <div class="proyects__content__item">
+                            <h3>FJL Bazar</h3>
+                            <p>Simple web to read information with this business.</p>
+                            <a href="http://www.fjlbazar.com" target="_blank">
+                                <img src="./static/fjlbazar.jpg" alt="fjlbazar">
+                            </a>
+                        </div>
+                        <div class="proyects__content__item proyects__content__item--active">
+                            <h3>Templates for web elements</h3>
+                            <p>This page help to solve some show styles objects and elements in websites - Only read</p>
+                            <a href="/web_templates" target="_blank">
+                                <img src="./static/web_templates" alt="web templates">
+                            </a>
+                        </div>
+                        <div class="proyects__content__item">
+                            <h3>Antonella portfolio's</h3>
+                            <p>Personal portfolio proyect, interactive page with registered users and live chat</p>
+                            <a href="http://www.antonella.com" target="_blank">
+                                <img src="./static/antonella.jpg" alt="Antonella">
+                            </a>
+                        </div>
+                        <div class="proyects__content__item">
+                            <h3>More...</h3>
+                            <p>More proyects incoming, in the next time upload in here</p>
+                            <a href="https://www.github.com/braiicano" target="_blank">
+                                <img src="./static/more.jpg" alt="More...">
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </section>
             <!--
-            <section class="section" id="section3">
-                <h2>Proyects</h2>
-                <div>
-                    <div>
-                        <a href="http://www.gesven.net">
-                            <img src="/static/gesven.jpg" alt="gesven">
-                        </a>
-                    </div>
-                    <div>
-                        <a href="http://www.fjlbazar.com">
-                            <img src="/static/fjlbazar.jpg" alt="fjlbazar">
-                        </a>
-                    </div>
-                </div>
-            </section>
             <section class="section" id="section4">
                 <h2>Contactme</h2>
                 <div>
@@ -280,6 +369,19 @@
                 p.firstElementChild.classList.toggle('init')
             })
         }
+        function toggleFront(id, classAction) {
+            let element = document.querySelector(id)
+            element.style.visibility = 'initial';
+            if (classAction === "open") {
+                element.classList.remove("front_close");
+                element.classList.add("front_open");
+            } else if (classAction === "close") {
+                element.classList.remove("front_open");
+                element.classList.add("front_close");
+            }
+        }
+
+
     </script>
 </body>
 

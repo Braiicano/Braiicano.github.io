@@ -1,4 +1,4 @@
-let writeEffect = function typed(element, text, time = 5) {
+let writeEffect = function typed(element, text, time = 5, loop = true) {
   time = time * 10;
   var index = 0;
   var letterIndex = 0;
@@ -11,20 +11,26 @@ let writeEffect = function typed(element, text, time = 5) {
         element.innerHTML.split(["|"])[0] + text[index][letterIndex] + "|";
       letterIndex++;
     } else {
-      full = true;
-      if (timeOut >= time / 2) {
-        element.innerHTML =
-          element.innerHTML
-            .split(["|"])[0]
-            .substring("", element.innerHTML.split(["|"])[0].length - 1) + "|";
-        letterIndex--;
-        if (letterIndex == 0 && full) {
-          full = false;
-          index = index < text.length - 1 ? index + 1 : 0;
-          timeOut = 0;
+      if (loop) {
+        full = true;
+        if (timeOut >= time / 2) {
+          element.innerHTML =
+            element.innerHTML
+              .split(["|"])[0]
+              .substring("", element.innerHTML.split(["|"])[0].length - 1) +
+            "|";
+          letterIndex--;
+          if (letterIndex == 0 && full) {
+            full = false;
+            index = index < text.length - 1 ? index + 1 : 0;
+            timeOut = 0;
+          }
+        } else {
+          timeOut++;
         }
       } else {
-        timeOut++;
+        clearInterval(writeEffect);
+        element.innerHTML = element.innerHTML.replace("|", ".");
       }
     }
   };
@@ -36,4 +42,4 @@ let writeEffect = function typed(element, text, time = 5) {
 // 2: text list.
 // 3: this is the time to write (it's in seconds) default time=2 (seconds)
 
-export {writeEffect}             
+export { writeEffect };
