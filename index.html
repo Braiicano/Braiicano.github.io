@@ -47,20 +47,45 @@
                         Ruby. In
                         the next one i show you my skills and proyects.
                     </p>
-                    <h6>
-                        <span id="continue"
-                            onclick='appear("#section2")'><span>C</span><span>l</span><span>i</span><span>c</span><span>k</span><span>
-                            </span><span>h</span><span>e</span><span>r</span><span>e</span><span>
-                            </span><span>t</span><span>o</span><span>
-                            </span><span>C</span><span>o</span><span>n</span><span>t</span><span>i</span><span>n</span><span>u</span><span>e</span></span>
-                    </h6>
+                    <div>
+                        <div class="bounce">
+                            <h6 onclick='appear("#section2")'>
+                                <span>C</span>
+                                <span>l</span>
+                                <span>i</span>
+                                <span>c</span>
+                                <span>k</span>
+                                <span> </span>
+                                <span>h</span>
+                                <span>e</span>
+                                <span>r</span>
+                                <span>e</span>
+                                <span> </span>
+                                <span>t</span>
+                                <span>o</span>
+                                <span> </span>
+                                <span>C</span>
+                                <span>o</span>
+                                <span>n</span>
+                                <span>t</span>
+                                <span>i</span>
+                                <span>n</span>
+                                <span>u</span>
+                                <span>e</span>
+                            </h6>
+                        </div>
+                    </div>
                 </div>
                 <h2 class="neon"><span style="width:80%" id="typed"></span></h2>
             </section>
             <section class="section" id="section2">
                 <div class="btn">
-                    <div class="prev"><a href="#" onclick="appear('#section2')">prev</a></div>
-                    <div class="next"><a href="#" onclick="toggleFront('#section3','open')">next</a></div>
+                    <div class="prev bounce" onclick="appear('#section2')">
+                        <h6><span>p</span><span>r</span><span>e</span><span>v</span></h6>
+                    </div>
+                    <div class="next bounce" onclick="toggleFront('#section3','open')">
+                        <h6><span>n</span><span>e</span><span>x</span><span>t</span></h6>
+                    </div>
                 </div>
                 <h1>Skills</h1>
                 <div class="skills">
@@ -269,73 +294,108 @@
             </section>
             <section class="section front_close" id="section3">
                 <div class="btn">
-                    <div class="prev"><a href="#" onclick="toggleFront('#section3','close')">prev</a></div>
-                    <div class="next"><a href="#" onclick="appear('#section3')">next</a></div>
+                    <div class="prev bounce" onclick="toggleFront('#section3','close')">
+                        <h6><span>p</span><span>r</span><span>e</span><span>v</span></h6>
+                    </div>
+                    <div class="next bounce" onclick="appear('#section4','updown')">
+                        <h6><span>n</span><span>e</span><span>x</span><span>t</span></h6>
+                    </div>
                 </div>
                 <h2>Proyects</h2>
                 <div class="proyects">
                     <div class="proyects__content">
                         <div class="proyects__content__item">
-                            <h3>Gesven</h3>
-                            <p>Webapp to manage business data, stock control, checker sell data, give invoice.</p>
-                            <a href="http://www.gesven.net" target="_blank">
-                                <img src="./static/gesven.jpg" alt="gesven">
-                            </a>
+                            <span>Gesven</span>
+                            <div class="hover">
+                                <p>Webapp to manage business data, stock control, checker sell data, give invoice.</p>
+                                <a href="http://www.gesven.net" target="_blank">Link</a>
+                            </div>
                         </div>
                         <div class="proyects__content__item">
-                            <h3>FJL Bazar</h3>
-                            <p>Simple web to read information with this business.</p>
-                            <a href="http://www.fjlbazar.com" target="_blank">
-                                <img src="./static/fjlbazar.jpg" alt="fjlbazar">
-                            </a>
-                        </div>
-                        <div class="proyects__content__item proyects__content__item--active">
-                            <h3>Templates for web elements</h3>
-                            <p>This page help to solve some show styles objects and elements in websites - Only read</p>
-                            <a href="/web_templates" target="_blank">
-                                <img src="./static/web_templates" alt="web templates">
-                            </a>
+                            <span>FJL Bazar</span>
+                            <div class="hover">
+                                <p>Simple web to read information with this business.</p>
+                                <a href="http://www.fjlbazar.com" target="_blank">Link</a>
+                            </div>
                         </div>
                         <div class="proyects__content__item">
-                            <h3>Antonella portfolio's</h3>
-                            <p>Personal portfolio proyect, interactive page with registered users and live chat</p>
-                            <a href="http://www.antonella.com" target="_blank">
-                                <img src="./static/antonella.jpg" alt="Antonella">
-                            </a>
+                            <span>Web templates</span>
+                            <div class="hover">
+                                <p>This page help to solve some show styles objects and elements in websites - Only read
+                                </p>
+                                <a href="/web_templates" target="_blank">Link</a>
+                            </div>
                         </div>
                         <div class="proyects__content__item">
-                            <h3>More...</h3>
-                            <p>More proyects incoming, in the next time upload in here</p>
-                            <a href="https://www.github.com/braiicano" target="_blank">
-                                <img src="./static/more.jpg" alt="More...">
-                            </a>
+                            <span>Antonella portfolio's</span>
+                            <div class="hover">
+                                <p>Personal portfolio proyect, interactive page with registered users and live chat</p>
+                                <a href="http://www.antonella.com" target="_blank">Link</a>
+                            </div>
+                        </div>
+                        <div class="proyects__content__item">
+                            <span>More..</span>
+                            <div class="hover">
+                                <p>More proyects incoming, in the next time upload in here</p>
+                                <a href="https://www.github.com/braiicano" target="_blank">Link</a>
+                            </div>
                         </div>
                     </div>
                 </div>
             </section>
-            <!--
             <section class="section" id="section4">
-                <h2>Contactme</h2>
-                <div>
-                    <form method="get">
-                        <div>
-                            <label for="name">Your name</label>
-                            <input type="text" name="name" id="name" required autocomplete="off">
-                        </div>
-                        <div>
-                            <label for="email">Your email</label>
-                            <input type="email" name="email" id="email" required autocomplete="off">
-                        </div>
-                        <div>
-                            <label for="textarea">Your message</label>
-                            <textarea name="text" id="textarea" required></textarea>
-                        </div>
-                        <div>
-                            <input type="button" value="Send">
-                        </div>
-                    </form>
+                <div class="btn">
+                    <div class="prev bounce" onclick="appear('#section4','updown')">
+                        <h6><span>p</span><span>r</span><span>e</span><span>v</span></h6>
+                    </div>
                 </div>
-            </section> -->
+                <h2>Contact me</h2>
+                <div class="container">
+                    <div class="container__form">
+                        <form method="get">
+                            <div class="container__form__item">
+                                <input type="text" name="name" id="name" required autocomplete="off">
+                                <label for="name"><span>Y</span><span>o</span><span>u</span><span>r</span><span>
+                                    </span><span>n</span><span>a</span><span>m</span><span>e</span></label>
+                            </div>
+                            <div class="container__form__item">
+                                <input type="email" name="email" id="email" required autocomplete="off">
+                                <label for="email"><span>Y</span><span>o</span><span>u</span><span>r</span><span>
+                                    </span><span>e</span><span>m</span><span>a</span><span>i</span><span>l</span></label>
+                            </div>
+                            <div class="container__form__item">
+                                <input type="text" name="text" id="text" required autocomplete="off">
+                                <label for="textarea"><span>Y</span><span>o</span><span>u</span><span>r</span><span>
+                                    </span><span>m</span><span>e</span><span>s</span><span>s</span><span>a</span><span>g</span><span>e</span></label>
+                            </div>
+                            <div class="bounce">
+                                <h6><button><span>S</span><span>e</span><span>n</span><span>d</span></button></h6>
+                            </div>
+                        </form>
+                    </div>
+                    <div class="container__contact">
+                        <div class="bounce">
+                            <h6><span>V</span><span>i</span><span>e</span><span>w</span><span>
+                                </span><span>m</span><span>y</span><span> </span><span>C</span><span>v</span></h6>
+                        </div>
+                        <ul class="container__contact__list">
+                            <li><a target="_blank" href="https://wa.me/541125707456"><i
+                                        class="fa-brands fa-whatsapp"></i></a>
+                            </li>
+                            <li><a target="_blank" href="https://www.instagram.com/braiidev"><i
+                                        class="fa-brands fa-instagram"></i></a>
+                            </li>
+                            <li><a target="_blank" href="https://www.linkedin.com/in/braiicano"><i
+                                        class="fa-brands fa-linkedin"></i></a></li>
+                            <li><a target="_blank" href="https://www.github.com/braiicano"><i
+                                        class="fa-brands fa-github"></i></a>
+                            </li>
+                            <li><a target="_blank" href="#"><i class="fa-brands fa-youtube"></i></a></li>
+                            <li><a target="_blank" href="#"><i class="fa-brands fa-spotify"></i></a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
         </main>
         <!-- <footer>
             <nav>
@@ -356,21 +416,23 @@
             </nav>
         </footer> -->
     </div>
-    <!-- <span id="mousePointer"></span> -->
     <script src="script/main.js" type="module"></script>
     <script>
+        const $ = selector => document.querySelector(selector)
         const $a = selector => document.querySelectorAll(selector)
         let progress = $a('[tag=progress]')
-        function appear(id) {
-            let elem = document.querySelector(id);
-            elem.classList.toggle("appear");
-            progress.forEach(p => {
-                p.classList.toggle("progress");
-                p.firstElementChild.classList.toggle('init')
-            })
+        function appear(id, effect = 'appear') {
+            let elem = $(id);
+            if (effect == 'appear') {
+                elem.classList.toggle("appear");
+                progress.forEach(p => {
+                    p.classList.toggle("progress");
+                    p.firstElementChild.classList.toggle('init')
+                })
+            } else if (effect == 'updown') elem.classList.toggle("updown");
         }
         function toggleFront(id, classAction) {
-            let element = document.querySelector(id)
+            let element = $(id)
             element.style.visibility = 'initial';
             if (classAction === "open") {
                 element.classList.remove("front_close");
@@ -380,7 +442,6 @@
                 element.classList.add("front_close");
             }
         }
-
 
     </script>
 </body>

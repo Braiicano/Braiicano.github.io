@@ -17,25 +17,23 @@ section
         flex-direction: column
         justify-content: center
         align-items: center
-        height: 80vh
+        // height: 80vh
+        overflow: hidden
+
         h1
             margin: .75rem 0
             padding-left: common.$font-size
             span
                 font-size: inherit
                 height: fit-content
+                animation: text-shadow 6s infinite alternate-reverse
         p
             line-height: calc( common.$font-size * 1.7 )
             padding-left: .5rem
             padding-right: .5rem
-        h6
-            text-align: right
-            span
-                transition-duration: .25s
-
-                &:hover
-                    animation: text-shadow infinite 6s alternate-reverse
-                    cursor: pointer
+        .title div
+            display: flex
+            justify-content: flex-end
         h2
             padding: .5rem 1rem
             width: 320px
@@ -43,6 +41,9 @@ section
 
             span
                 font-size: inherit
+    @media screen and (width<500px)
+        p
+            line-height: 1 !important
 
     &#section2
         @include func.position(absolute,0,0,0,0,20)
@@ -91,10 +92,8 @@ section
                     border-top-left-radius: common.$font-size
                     border-top-right-radius: common.$font-size
                     & *
-                        animation-name: text-shadow
-                        animation-duration: 8s
-                        animation-iteration-count: infinite
-                        animation-direction: alternate-reverse
+                        color: common.$item-alpha
+                        text-shadow: 0 0 2px common.$font-color
                 &#py
                     @include func.background('python.png')
                 &#js
@@ -190,33 +189,178 @@ section
             align-self: flex-start
 
         .proyects
-            width-min: 320px
-            width: 800px
-            height: 100%
+            min-width: 320px
+            max-width: 800px
+            height: 50%
+            margin: 10% 0
             &__content
                 width: 100%
                 height: 100%
-                @include func.flex($direction:row)
+                display: flex
                 gap: .8rem
+                padding: .4rem
                 &__item
-                    width: 300px
-                    min-height: 300px
-                    padding: 1rem
+                    height: 100%
+                    flex: 1
+                    overflow: hidden
+                    cursor: pointer
+                    border-radius: .5rem
                     background: common.$carrousel
                     border: 2px solid common.$bg-color-2-hover
-                    border-radius: .5rem
-                    & + &--active
-                        transform: perspective(1000px) translate3d(0,0,0)
-                    &--active
-                        transform: perspective(1000px) translate3d(0,0,100px)
+                    @include func.flex
+                    transition: all .5s
+                    &:hover
+                        flex: 10
+                        justify-content: space-evenly
+                        span
+                            transform: rotate(0)
+                            &+.hover
+                                position: relative
+                                top: 0
+                                z-index: 1
 
-.btn
-    width: 160px
-    @include func.position(inherit,3%,3%)
-    @include func.flex($direction:row,$wrap:wrap)
-    gap: .25rem
-    div a
-        transition-duration: .25s
-        &:hover
-            cursor: pointer
-            animation: text-shadow 6s infinite alternate-reverse
+                    &#templates
+                        @include func.background('templates.png')
+                    &#antonella
+                        @include func.background('antonella.png')
+                    &#gesven
+                        @include func.background('gesven.png')
+                    &#fjl
+                        @include func.background('fjl.png')
+                    &#more
+                        @include func.background('more.png')
+                    span
+                        min-width: 14rem
+                        padding: .5rem
+                        text-align: center
+                        transform: rotate(-90deg)
+                        transition: all .5s
+                        letter-spacing: .1rem
+                    .hover
+                        padding: .5rem
+                        position: absolute
+                        top: -100%
+                        transition-delay: .2s
+                        transition-duration: .25s
+                        z-index: -1
+
+    &#section4
+        @include func.position(absolute,-120vh,0,0,0,40)
+        @include func.flex()
+        width: 100%
+        background: common.$bg-color
+        transition-duration: 1.25s
+        &.updown
+            top: 0 !important
+        *
+            text-align: center
+        .container
+            @include func.flex($direction:row,$wrap:wrap)
+            &__form
+                width: 240px
+                &__item
+                    position: relative
+                    margin: .5rem auto
+                    width: 200px
+                    & input
+                        background-color: transparent
+                        border: 0
+                        border-bottom: 2px common.$font-color solid
+                        display: block
+                        width: 100%
+                        height: 4rem
+                        padding: 5px 0
+                        font-size: 1.1rem
+                        color: common.$hover-color
+                        &:invalid
+                            color: common.$item-alpha2
+                            border-bottom-color: common.$bg-color-2-hover
+                        &:valid
+                            border-bottom-color: #11aa11
+                        &:focus
+                            border-bottom-color: common.$font-color
+                        &:focus, &:valid
+                            color: common.$font-color
+                            outline: 0
+                            &+label span
+                                color: common.$font-color
+                                transform: translateY(-30px)
+                                animation: text-shadow 6s infinite alternate-reverse
+                    & label
+                        position: absolute
+                        top: 30px
+                        left: 0
+                        pointer-events: none
+                        span
+                            display: inline-block
+                            font-size: 1.1rem
+                            min-width: 5px
+                            transition-duration: .3s
+                        @for $i from 1 through 23
+                            & span:nth-child(#{$i})
+                                transition-delay: .01s*$i
+                .bounce
+                    margin: auto
+                    button
+                        cursor: pointer
+                        background: transparent
+                        border: none
+                        height: 4rem 
+            &__contact
+                width: 200px
+                .bounce
+                    margin: 1rem auto
+                    *
+                        margin: 0 2px
+                p
+                    margin: .25rem 0
+                ul
+                    @media screen and (width<500px)
+                        @include func.flex($direction:row)
+
+                i
+                    width: 40px
+                    height: 40px
+                    transition-duration: .5s
+                    &.fa-brands
+                        text-shadow: 0 0 1px #353535
+                        &:hover
+                            text-shadow: 0 0 2px #555555
+                    &.fa-youtube
+                        color: #cf0000
+                        &:hover::after
+                            content: 'Braiidev'
+                    &.fa-whatsapp
+                        color: #25aa25
+                        &:hover::after
+                            content: 'Whatsappme'
+                    &.fa-instagram
+                        color: #ef5eff
+                        &:hover::after
+                            content: '@braiidev'
+                    &.fa-linkedin
+                        color: #0048cf
+                        &:hover::after
+                            content: 'in/Braiicano'
+                    &.fa-github
+                        color: #000000
+                        &:hover::after
+                            content: '/braiicano'
+                    &.fa-spotify
+                        color: #158504
+                        &:hover::after
+                            content: 'bDev music'
+                    &:hover::after
+                        font-family: 'Roboto', sans-serif
+                        text-align: left
+                        overflow: hidden
+                        position: absolute
+                        color: common.$font-color
+                        background-color: common.$bg-color-2-hover
+                        border-radius: 4px
+                        padding: 4px
+                        animation: appearMove .2s linear
+                        margin-left: 5px
+                        width: 125px
+                        height: 20px
+                        

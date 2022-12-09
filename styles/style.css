@@ -10,6 +10,7 @@
   padding: 0;
   box-sizing: border-box;
   vertical-align: baseline;
+  user-select: none;
 }
 
 html {
@@ -86,6 +87,29 @@ img {
   }
   to {
     transform: perspective(1000px) translate3d(0, 0, 0);
+  }
+}
+@media screen and (width < 500px) {
+  h1 {
+    font-size: 35px;
+  }
+  h2, legend {
+    font-size: 30px;
+  }
+  h3 {
+    font-size: 26px;
+  }
+  h4 {
+    font-size: 23px;
+  }
+  h5 {
+    font-size: 20px;
+  }
+  h6 {
+    font-size: 18px;
+  }
+  p, b, a, i, label {
+    font-size: inherit;
   }
 }
 .neon {
@@ -215,6 +239,131 @@ img {
     left: var(--left-init);
   }
 }
+.btn {
+  width: 160px;
+  position: inherit;
+  top: 3%;
+  left: 3%;
+  right: "none";
+  bottom: "none";
+  z-index: 10;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 0.25rem;
+}
+
+.bounce {
+  width: fit-content;
+  transition-duration: 0.25s;
+}
+.bounce h6 {
+  cursor: pointer;
+}
+.bounce span {
+  display: inline-block;
+}
+.bounce h6 span:nth-child(2) {
+  animation-delay: 0.02s;
+}
+.bounce h6 span:nth-child(3) {
+  animation-delay: 0.03s;
+}
+.bounce h6 span:nth-child(4) {
+  animation-delay: 0.04s;
+}
+.bounce h6 span:nth-child(5) {
+  animation-delay: 0.05s;
+}
+.bounce h6 span:nth-child(6) {
+  animation-delay: 0.06s;
+}
+.bounce h6 span:nth-child(7) {
+  animation-delay: 0.07s;
+}
+.bounce h6 span:nth-child(8) {
+  animation-delay: 0.08s;
+}
+.bounce h6 span:nth-child(9) {
+  animation-delay: 0.09s;
+}
+.bounce h6 span:nth-child(10) {
+  animation-delay: 0.1s;
+}
+.bounce h6 span:nth-child(11) {
+  animation-delay: 0.11s;
+}
+.bounce h6 span:nth-child(12) {
+  animation-delay: 0.12s;
+}
+.bounce h6 span:nth-child(13) {
+  animation-delay: 0.13s;
+}
+.bounce h6 span:nth-child(14) {
+  animation-delay: 0.14s;
+}
+.bounce h6 span:nth-child(15) {
+  animation-delay: 0.15s;
+}
+.bounce h6 span:nth-child(16) {
+  animation-delay: 0.16s;
+}
+.bounce h6 span:nth-child(17) {
+  animation-delay: 0.17s;
+}
+.bounce h6 span:nth-child(18) {
+  animation-delay: 0.18s;
+}
+.bounce h6 span:nth-child(19) {
+  animation-delay: 0.19s;
+}
+.bounce h6 span:nth-child(20) {
+  animation-delay: 0.2s;
+}
+.bounce h6 span:nth-child(21) {
+  animation-delay: 0.21s;
+}
+.bounce h6 span:nth-child(22) {
+  animation-delay: 0.22s;
+}
+.bounce h6 span:nth-child(23) {
+  animation-delay: 0.23s;
+}
+.bounce:hover span {
+  animation: text-shadow infinite 6s alternate-reverse, bounce 0.6s;
+}
+.bounce:active span {
+  color: #8d232b;
+  text-shadow: 0 0 2rem #bebebe, 0 0 0.5rem #a32616;
+  text-decoration: underline;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translate(0);
+  }
+  25% {
+    transform: rotateX(20deg) translateY(2px) rotate(-3deg);
+  }
+  50% {
+    transform: translateY(-20px) rotate(3deg) scale(1.1);
+  }
+}
+@keyframes appearMove {
+  0% {
+    opacity: 0;
+    width: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  100% {
+    width: 125px;
+  }
+}
 :root {
   --time: .5s;
 }
@@ -242,7 +391,7 @@ section#section1 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 80vh;
+  overflow: hidden;
 }
 section#section1 h1 {
   margin: 0.75rem 0;
@@ -251,21 +400,16 @@ section#section1 h1 {
 section#section1 h1 span {
   font-size: inherit;
   height: fit-content;
+  animation: text-shadow 6s infinite alternate-reverse;
 }
 section#section1 p {
   line-height: 34px;
   padding-left: 0.5rem;
   padding-right: 0.5rem;
 }
-section#section1 h6 {
-  text-align: right;
-}
-section#section1 h6 span {
-  transition-duration: 0.25s;
-}
-section#section1 h6 span:hover {
-  animation: text-shadow infinite 6s alternate-reverse;
-  cursor: pointer;
+section#section1 .title div {
+  display: flex;
+  justify-content: flex-end;
 }
 section#section1 h2 {
   padding: 0.5rem 1rem;
@@ -274,6 +418,11 @@ section#section1 h2 {
 }
 section#section1 h2 span {
   font-size: inherit;
+}
+@media screen and (width < 500px) {
+  section p {
+    line-height: 1 !important;
+  }
 }
 section#section2 {
   position: absolute;
@@ -335,76 +484,52 @@ section#section2 .skills .cards .title {
   border-top-right-radius: 20px;
 }
 section#section2 .skills .cards .title * {
-  animation-name: text-shadow;
-  animation-duration: 8s;
-  animation-iteration-count: infinite;
-  animation-direction: alternate-reverse;
+  color: #8d232b;
+  text-shadow: 0 0 2px #bebebe;
 }
 section#section2 .skills .cards#py {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/icons/python.png") center/80% no-repeat;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/python.png") center/80% no-repeat;
 }
 section#section2 .skills .cards#js {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/icons/nodejs.png") center/80% no-repeat;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/nodejs.png") center/80% no-repeat;
 }
 section#section2 .skills .cards#sass {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/icons/sass.png") center/80% no-repeat;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/sass.png") center/80% no-repeat;
 }
 section#section2 .skills .cards#mysql {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/icons/mysql.png") center/80% no-repeat;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/mysql.png") center/80% no-repeat;
 }
 section#section2 .skills .cards#sqla {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/icons/sqla.png") center/80% no-repeat;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/sqla.png") center/80% no-repeat;
 }
 section#section2 .skills .cards#vim {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/icons/vim.png") center/80% no-repeat;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/vim.png") center/80% no-repeat;
 }
 section#section2 .skills .cards#bs {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/icons/bootstrap.png") center/80% no-repeat;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/bootstrap.png") center/80% no-repeat;
 }
 section#section2 .skills .cards#bw {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/icons/bootswatch.svg") center/80% no-repeat;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/bootswatch.svg") center/80% no-repeat;
 }
 section#section2 .skills .cards#go {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/icons/golang.svg") center/80% no-repeat;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/golang.svg") center/80% no-repeat;
 }
 section#section2 .skills .cards#ruby {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/icons/ruby.png") center/80% no-repeat;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/ruby.png") center/80% no-repeat;
 }
 section#section2 .skills .cards#design {
-  background-attachment: fixed;
-  background-repeat: no-repeat;
   background-size: cover;
-  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/icons/html.png") center/80% no-repeat;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/html.png") center/80% no-repeat;
 }
 section#section2 .skills .cards .content {
   display: flex;
@@ -512,58 +637,323 @@ section#section3 h2 {
   align-self: flex-start;
 }
 section#section3 .proyects {
-  width-min: 320px;
-  width: 800px;
-  height: 100%;
+  min-width: 320px;
+  max-width: 800px;
+  height: 50%;
+  margin: 10% 0;
 }
 section#section3 .proyects__content {
   width: 100%;
   height: 100%;
   display: flex;
+  gap: 0.8rem;
+  padding: 0.4rem;
+}
+section#section3 .proyects__content__item {
+  height: 100%;
+  flex: 1;
+  overflow: hidden;
+  cursor: pointer;
+  border-radius: 0.5rem;
+  background: #550000;
+  border: 2px solid #800000;
+  display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
-  flex-direction: row;
+  flex-direction: column;
   flex-wrap: nowrap;
-  gap: 0.8rem;
+  transition: all 0.5s;
 }
-section#section3 .proyects__content__item {
-  width: 300px;
-  min-height: 300px;
-  padding: 1rem;
-  background: #550000;
-  border: 2px solid #800000;
-  border-radius: 0.5rem;
+section#section3 .proyects__content__item:hover {
+  flex: 10;
+  justify-content: space-evenly;
 }
-section#section3 .proyects__content__item + section#section3 .proyects__content__item--active {
-  transform: perspective(1000px) translate3d(0, 0, 0);
+section#section3 .proyects__content__item:hover span {
+  transform: rotate(0);
 }
-section#section3 .proyects__content__item--active {
-  transform: perspective(1000px) translate3d(0, 0, 100px);
+section#section3 .proyects__content__item:hover span + .hover {
+  position: relative;
+  top: 0;
+  z-index: 1;
 }
-
-.btn {
-  width: 160px;
-  position: inherit;
-  top: 3%;
-  left: 3%;
-  right: "none";
-  bottom: "none";
-  z-index: 10;
+section#section3 .proyects__content__item#templates {
+  background-size: cover;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/templates.png") center/80% no-repeat;
+}
+section#section3 .proyects__content__item#antonella {
+  background-size: cover;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/antonella.png") center/80% no-repeat;
+}
+section#section3 .proyects__content__item#gesven {
+  background-size: cover;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/gesven.png") center/80% no-repeat;
+}
+section#section3 .proyects__content__item#fjl {
+  background-size: cover;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/fjl.png") center/80% no-repeat;
+}
+section#section3 .proyects__content__item#more {
+  background-size: cover;
+  background: linear-gradient(90deg, rgba(37, 37, 37, 0.5019607843), rgba(23, 23, 23, 0.5019607843)), url("../static/more.png") center/80% no-repeat;
+}
+section#section3 .proyects__content__item span {
+  min-width: 14rem;
+  padding: 0.5rem;
+  text-align: center;
+  transform: rotate(-90deg);
+  transition: all 0.5s;
+  letter-spacing: 0.1rem;
+}
+section#section3 .proyects__content__item .hover {
+  padding: 0.5rem;
+  position: absolute;
+  top: -100%;
+  transition-delay: 0.2s;
+  transition-duration: 0.25s;
+  z-index: -1;
+}
+section#section4 {
+  position: absolute;
+  top: -120vh;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 40;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  width: 100%;
+  background: #171717;
+  transition-duration: 1.25s;
+}
+section#section4.updown {
+  top: 0 !important;
+}
+section#section4 * {
+  text-align: center;
+}
+section#section4 .container {
   display: flex;
   justify-content: center;
   align-content: center;
   align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
-  gap: 0.25rem;
 }
-.btn div a {
-  transition-duration: 0.25s;
+section#section4 .container__form {
+  width: 240px;
 }
-.btn div a:hover {
-  cursor: pointer;
+section#section4 .container__form__item {
+  position: relative;
+  margin: 0.5rem auto;
+  width: 200px;
+}
+section#section4 .container__form__item input {
+  background-color: transparent;
+  border: 0;
+  border-bottom: 2px #bebebe solid;
+  display: block;
+  width: 100%;
+  height: 4rem;
+  padding: 5px 0;
+  font-size: 1.1rem;
+  color: #c1230f;
+}
+section#section4 .container__form__item input:invalid {
+  color: rgba(141, 35, 43, 0.5019607843);
+  border-bottom-color: #800000;
+}
+section#section4 .container__form__item input:valid {
+  border-bottom-color: #11aa11;
+}
+section#section4 .container__form__item input:focus {
+  border-bottom-color: #bebebe;
+}
+section#section4 .container__form__item input:focus, section#section4 .container__form__item input:valid {
+  color: #bebebe;
+  outline: 0;
+}
+section#section4 .container__form__item input:focus + label span, section#section4 .container__form__item input:valid + label span {
+  color: #bebebe;
+  transform: translateY(-30px);
   animation: text-shadow 6s infinite alternate-reverse;
+}
+section#section4 .container__form__item label {
+  position: absolute;
+  top: 30px;
+  left: 0;
+  pointer-events: none;
+}
+section#section4 .container__form__item label span {
+  display: inline-block;
+  font-size: 1.1rem;
+  min-width: 5px;
+  transition-duration: 0.3s;
+}
+section#section4 .container__form__item label span:nth-child(1) {
+  transition-delay: 0.01s;
+}
+section#section4 .container__form__item label span:nth-child(2) {
+  transition-delay: 0.02s;
+}
+section#section4 .container__form__item label span:nth-child(3) {
+  transition-delay: 0.03s;
+}
+section#section4 .container__form__item label span:nth-child(4) {
+  transition-delay: 0.04s;
+}
+section#section4 .container__form__item label span:nth-child(5) {
+  transition-delay: 0.05s;
+}
+section#section4 .container__form__item label span:nth-child(6) {
+  transition-delay: 0.06s;
+}
+section#section4 .container__form__item label span:nth-child(7) {
+  transition-delay: 0.07s;
+}
+section#section4 .container__form__item label span:nth-child(8) {
+  transition-delay: 0.08s;
+}
+section#section4 .container__form__item label span:nth-child(9) {
+  transition-delay: 0.09s;
+}
+section#section4 .container__form__item label span:nth-child(10) {
+  transition-delay: 0.1s;
+}
+section#section4 .container__form__item label span:nth-child(11) {
+  transition-delay: 0.11s;
+}
+section#section4 .container__form__item label span:nth-child(12) {
+  transition-delay: 0.12s;
+}
+section#section4 .container__form__item label span:nth-child(13) {
+  transition-delay: 0.13s;
+}
+section#section4 .container__form__item label span:nth-child(14) {
+  transition-delay: 0.14s;
+}
+section#section4 .container__form__item label span:nth-child(15) {
+  transition-delay: 0.15s;
+}
+section#section4 .container__form__item label span:nth-child(16) {
+  transition-delay: 0.16s;
+}
+section#section4 .container__form__item label span:nth-child(17) {
+  transition-delay: 0.17s;
+}
+section#section4 .container__form__item label span:nth-child(18) {
+  transition-delay: 0.18s;
+}
+section#section4 .container__form__item label span:nth-child(19) {
+  transition-delay: 0.19s;
+}
+section#section4 .container__form__item label span:nth-child(20) {
+  transition-delay: 0.2s;
+}
+section#section4 .container__form__item label span:nth-child(21) {
+  transition-delay: 0.21s;
+}
+section#section4 .container__form__item label span:nth-child(22) {
+  transition-delay: 0.22s;
+}
+section#section4 .container__form__item label span:nth-child(23) {
+  transition-delay: 0.23s;
+}
+section#section4 .container__form .bounce {
+  margin: auto;
+}
+section#section4 .container__form .bounce button {
+  cursor: pointer;
+  background: transparent;
+  border: none;
+  height: 4rem;
+}
+section#section4 .container__contact {
+  width: 200px;
+}
+section#section4 .container__contact .bounce {
+  margin: 1rem auto;
+}
+section#section4 .container__contact .bounce * {
+  margin: 0 2px;
+}
+section#section4 .container__contact p {
+  margin: 0.25rem 0;
+}
+@media screen and (width < 500px) {
+  section#section4 .container__contact ul {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: nowrap;
+  }
+}
+section#section4 .container__contact i {
+  width: 40px;
+  height: 40px;
+  transition-duration: 0.5s;
+}
+section#section4 .container__contact i.fa-brands {
+  text-shadow: 0 0 1px #353535;
+}
+section#section4 .container__contact i.fa-brands:hover {
+  text-shadow: 0 0 2px #555555;
+}
+section#section4 .container__contact i.fa-youtube {
+  color: #cf0000;
+}
+section#section4 .container__contact i.fa-youtube:hover::after {
+  content: "Braiidev";
+}
+section#section4 .container__contact i.fa-whatsapp {
+  color: #25aa25;
+}
+section#section4 .container__contact i.fa-whatsapp:hover::after {
+  content: "Whatsappme";
+}
+section#section4 .container__contact i.fa-instagram {
+  color: #ef5eff;
+}
+section#section4 .container__contact i.fa-instagram:hover::after {
+  content: "@braiidev";
+}
+section#section4 .container__contact i.fa-linkedin {
+  color: #0048cf;
+}
+section#section4 .container__contact i.fa-linkedin:hover::after {
+  content: "in/Braiicano";
+}
+section#section4 .container__contact i.fa-github {
+  color: #000000;
+}
+section#section4 .container__contact i.fa-github:hover::after {
+  content: "/braiicano";
+}
+section#section4 .container__contact i.fa-spotify {
+  color: #158504;
+}
+section#section4 .container__contact i.fa-spotify:hover::after {
+  content: "bDev music";
+}
+section#section4 .container__contact i:hover::after {
+  font-family: "Roboto", sans-serif;
+  text-align: left;
+  overflow: hidden;
+  position: absolute;
+  color: #bebebe;
+  background-color: #800000;
+  border-radius: 4px;
+  padding: 4px;
+  animation: appearMove 0.2s linear;
+  margin-left: 5px;
+  width: 125px;
+  height: 20px;
 }
 
 #mousePointer {
