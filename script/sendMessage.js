@@ -32,7 +32,7 @@ const sendMessage = (msg) => {
         );
       }, 2000);
       setTimeout(() => {
-        window.location.href = "https://www.braiidev.com";
+        window.location.href = "https://portfolio.braiidev.com";
       }, 10000);
     })
     .catch((err) => console.log(err));

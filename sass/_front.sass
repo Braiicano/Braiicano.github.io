@@ -210,7 +210,7 @@ section
         .proyects
             min-width: 320px
             max-width: 800px
-            height: 50%
+            height: 60%
             margin: 10% 0
             &__content
                 width: 100%
@@ -218,7 +218,9 @@ section
                 display: flex
                 gap: .8rem
                 padding: .4rem
+                position: relative
                 &__item
+                    width: 200px
                     height: 100%
                     flex: 1
                     overflow: hidden
@@ -228,15 +230,6 @@ section
                     border: 2px solid common.$bg-color-2-hover
                     @include func.flex(center,false,center)
                     transition: all .5s
-                    &:hover
-                        flex: 10
-                        justify-content: space-evenly
-                        span
-                            transform: rotate(0)
-                            &+.hover
-                                position: relative
-                                top: 0
-                                z-index: 1
 
                     &#templates
                         @include func.background('templates.png')
@@ -257,11 +250,7 @@ section
                         letter-spacing: .1rem
                     .hover
                         padding: .5rem
-                        position: absolute
-                        top: -100%
-                        transition-delay: .2s
-                        transition-duration: .25s
-                        z-index: -1
+                        display: none
 
     &#section4
         @include func.position(absolute,-120vh,0,0,0,40)

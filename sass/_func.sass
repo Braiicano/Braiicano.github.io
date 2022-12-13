@@ -197,9 +197,26 @@
     box-shadow: 0px 0px 20px 2px common.$hover-color-2
     border-radius: 50%
 
-@keyframes orbit7456
+@keyframes orbit
     0%
     80%
         transform: rotate(360deg)
     100%
         transform: rotate(360deg)
+
+.proyect__hidden
+    opacity: 0
+    visibility: hidden
+.proyect__active
+    position: absolute
+    left: 0
+    width: 100% !important
+    max-height: 800px !important
+    height: 100% !important
+    justify-content: space-evenly !important
+    span
+        transition-delay: 0
+        transform: rotate(0) !important
+        &+.hover
+            display: initial !important
+

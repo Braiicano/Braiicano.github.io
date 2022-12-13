@@ -13,24 +13,6 @@
 
 <body>
     <div>
-        <!-- <header>
-            <div>
-                <ul class="text-right">
-                    <li><a target="_blank" href="https://wa.me/541125707456"><i class="fa-brands fa-whatsapp"></i></a>
-                    </li>
-                    <li><a target="_blank" href="https://www.instagram.com/braiidev"><i
-                                class="fa-brands fa-instagram"></i></a>
-                    </li>
-                    <li><a target="_blank" href="https://www.linkedin.com/in/braiicano"><i
-                                class="fa-brands fa-linkedin"></i></a></li>
-                    <li><a target="_blank" href="https://www.github.com/braiicano"><i
-                                class="fa-brands fa-github"></i></a>
-                    </li>
-                    <li><a target="_blank" href="#"><i class="fa-brands fa-youtube"></i></a></li>
-                    <li><a target="_blank" href="#"><i class="fa-brands fa-spotify"></i></a></li>
-                </ul>
-            </div>
-        </header> -->
         <main>
             <section id="section1">
                 <div class="title">
@@ -304,21 +286,21 @@
                 <h2>Proyects</h2>
                 <div class="proyects">
                     <div class="proyects__content">
-                        <div class="proyects__content__item">
+                        <div class="proyects__content__item" onclick="showElement('0')" value="0">
                             <span>Gesven</span>
                             <div class="hover">
                                 <p>Webapp to manage business data, stock control, checker sell data, give invoice.</p>
                                 <a href="http://www.gesven.net" target="_blank">Link</a>
                             </div>
                         </div>
-                        <div class="proyects__content__item">
+                        <div class="proyects__content__item" onclick="showElement('1')">
                             <span>FJL Bazar</span>
                             <div class="hover">
                                 <p>Simple web to read information with this business.</p>
                                 <a href="http://www.fjlbazar.com" target="_blank">Link</a>
                             </div>
                         </div>
-                        <div class="proyects__content__item">
+                        <div class="proyects__content__item" onclick="showElement('2')">
                             <span>Web templates</span>
                             <div class="hover">
                                 <p>This page help to solve some show styles objects and elements in websites - Only read
@@ -326,14 +308,14 @@
                                 <a href="/web_templates" target="_blank">Link</a>
                             </div>
                         </div>
-                        <div class="proyects__content__item">
+                        <div class="proyects__content__item" onclick="showElement('3')">
                             <span>Antonella portfolio's</span>
                             <div class="hover">
                                 <p>Personal portfolio proyect, interactive page with registered users and live chat</p>
                                 <a href="http://www.antonella.com" target="_blank">Link</a>
                             </div>
                         </div>
-                        <div class="proyects__content__item">
+                        <div class="proyects__content__item" onclick="showElement('4')">
                             <span>More..</span>
                             <div class="hover">
                                 <p>More proyects incoming, in the next time upload in here</p>
@@ -435,6 +417,23 @@
                 element.classList.remove("front_open");
                 element.classList.add("front_close");
             }
+        }
+        let items = $a('div.proyects__content__item')
+        function showElement(position) {
+            items.forEach(item => {
+                if (!item.attributes.onclick.value.includes(position)) {
+                    item.classList.toggle('proyect__hidden')
+                } else {
+                    if (!item.classList.value.includes('proyect__active')) {
+                        item.animate([{position:'absolute',left:'0'}],{duration:1000})
+                        setTimeout(() => {
+                            item.classList.toggle('proyect__active')
+                        }, 500);
+                    } else {
+                        item.classList.toggle('proyect__active')
+                    }
+                }
+            })
         }
 
     </script>
