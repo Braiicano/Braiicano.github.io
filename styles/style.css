@@ -244,13 +244,8 @@ img {
   position: inherit;
   top: 3%;
   left: 3%;
-  right: "none";
-  bottom: "none";
   z-index: 10;
   display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   gap: 0.25rem;
@@ -364,6 +359,51 @@ img {
     width: 125px;
   }
 }
+@keyframes border {
+  to {
+    filter: hue-rotate(1turn);
+  }
+}
+.loader__container {
+  --size-loader: 50px;
+  --size-orbe: 10px;
+  width: var(--size-loader);
+  height: var(--size-loader);
+  position: relative;
+  transform: rotate(45deg);
+  margin: auto;
+  top: 50%;
+}
+
+.loader__item {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  --delay: calc(var(--index) * 0.1s);
+  animation: orbit7456 ease-in-out 1.5s var(--delay) infinite;
+  opacity: calc(1 - 0.2 * var(--index));
+}
+
+.loader__item::after {
+  position: absolute;
+  content: "";
+  top: 0;
+  left: 0;
+  width: var(--size-orbe);
+  height: var(--size-orbe);
+  background-color: #a32616;
+  box-shadow: 0px 0px 20px 2px #a32616;
+  border-radius: 50%;
+}
+
+@keyframes orbit7456 {
+  80% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
 :root {
   --time: .5s;
 }
@@ -464,15 +504,34 @@ section#section2 .skills::-webkit-scrollbar-thumb {
   border-radius: 20px;
 }
 section#section2 .skills .cards {
+  position: relative;
   width: 300px;
   height: 350px;
-  border: 1px solid #171717;
+  padding: 2px;
   border-radius: 20px;
 }
-section#section2 .skills .cards:hover {
-  animation-name: neon-effect;
-  animation-duration: 6s;
-  animation-iteration-count: infinite;
+section#section2 .skills .cards:hover::after {
+  --m-i: linear-gradient(#000, #000);
+  --m-o: content-box, padding-box;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: -2px;
+  padding: 3px;
+  border-radius: 20px;
+  background-image: conic-gradient(#f50000, #f5f500, #00f500, #00f5f5, #f500f5, #f50000);
+  -webkit-mask-image: var(--m-i), var(--m-i);
+  mask-image: var(--m-i), var(--m-i);
+  -webkit-mask-origin: var(--m-o);
+  mask-origin: var(--m-o);
+  -webkit-mask-clip: var(--m-o);
+  mask-composite: exclude;
+  -webkit-mask-composite: destination-out;
+  filter: hue-rotate(0);
+  animation: border linear 0.7s infinite;
+  z-index: -1;
 }
 section#section2 .skills .cards * {
   text-align: center;
@@ -534,7 +593,6 @@ section#section2 .skills .cards#design {
 section#section2 .skills .cards .content {
   display: flex;
   justify-content: flex-end;
-  align-content: center;
   align-items: flex-start;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -587,9 +645,6 @@ section#section2 .skills .cards .content .progress__bar {
   height: 100%;
   background: #8d232b;
   display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
   transition: width 1.5s;
@@ -602,14 +657,10 @@ section#section2 .skills .cards .content .progress__bar__text {
 section#section3 {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
   z-index: 30;
   display: flex;
   justify-content: center;
   align-content: flex-start;
-  align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
   width: 100%;
@@ -622,9 +673,6 @@ section#section3::before {
   content: "";
   position: inherit;
   top: 0;
-  left: 0;
-  right: "none";
-  bottom: "none";
   z-index: -1;
   background: linear-gradient(180deg, transparent 50%, #aa2020 50%, #800000 25%);
   width: 100%;
@@ -659,7 +707,6 @@ section#section3 .proyects__content__item {
   border: 2px solid #800000;
   display: flex;
   justify-content: center;
-  align-content: center;
   align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -722,7 +769,6 @@ section#section4 {
   z-index: 40;
   display: flex;
   justify-content: center;
-  align-content: center;
   align-items: center;
   flex-direction: column;
   flex-wrap: nowrap;
@@ -738,9 +784,6 @@ section#section4 * {
 }
 section#section4 .container {
   display: flex;
-  justify-content: center;
-  align-content: center;
-  align-items: center;
   flex-direction: row;
   flex-wrap: wrap;
 }
@@ -887,9 +930,6 @@ section#section4 .container__contact p {
 @media screen and (width < 500px) {
   section#section4 .container__contact ul {
     display: flex;
-    justify-content: center;
-    align-content: center;
-    align-items: center;
     flex-direction: row;
     flex-wrap: nowrap;
   }
@@ -955,19 +995,33 @@ section#section4 .container__contact i:hover::after {
   width: 125px;
   height: 20px;
 }
-
-#mousePointer {
-  position: fixed;
-  z-index: 1000;
-  width: 6px;
-  height: 6px;
-  border-radius: 3px;
-  background-color: #fff;
-  box-shadow: 0px 0px 10px #aaaaaa;
+section#section4 .loader {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, #000, rgba(0, 0, 0, 0.2666666667));
+  z-index: 15;
 }
-#mousePointer:active {
-  z-index: -1;
-  background-color: #aaa;
+
+footer {
+  visibility: hidden;
+  width: 100%;
+  height: 100vh;
+  margin: auto;
+  background: radial-gradient(#171717 40%, #aa2020, #8d232b);
+  position: absolute;
+  top: 0;
+  z-index: 50;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  flex-wrap: nowrap;
+}
+footer.end {
+  transition-duration: 0.5s;
 }
 
 /*# sourceMappingURL=style.css.map */
