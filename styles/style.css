@@ -909,7 +909,7 @@ section#section4 .container__form .bounce button {
   height: 4rem;
 }
 section#section4 .container__contact {
-  width: 200px;
+  width: 240px;
 }
 section#section4 .container__contact .bounce {
   margin: 1rem auto;
@@ -924,7 +924,7 @@ section#section4 .container__contact p {
   section#section4 .container__contact ul {
     display: flex;
     flex-direction: row;
-    flex-wrap: nowrap;
+    flex-wrap: wrap;
   }
 }
 section#section4 .container__contact i {
