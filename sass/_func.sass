@@ -208,15 +208,18 @@
     opacity: 0
     visibility: hidden
 .proyect__active
-    position: absolute
-    left: 0
-    width: 100% !important
-    max-height: 800px !important
-    height: 100% !important
-    justify-content: space-evenly !important
-    span
-        transition-delay: 0
-        transform: rotate(0) !important
-        &+.hover
-            display: initial !important
-
+    height: 320px !important
+    border: 3px solid common.$font-color !important
+    &:nth-child(1)
+        transform: translateY(0)
+    &:nth-child(2)
+        transform: translateY(-20%)
+    &:nth-child(3)
+        transform: translateY(-40%)
+    &:nth-child(4)
+        transform: translateY(-60%)
+    &:nth-child(5)
+        transform: translateY(-80%)
+    .hover
+        transition-delay: .25s !important
+        display: initial !important

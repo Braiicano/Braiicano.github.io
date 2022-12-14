@@ -1,5 +1,6 @@
 import { writeEffect } from "./writeEffect.js";
 import { sender } from "./sendMessage.js";
+import { changeColor } from "./paintH1.js";
 
 const $ = (selector) => document.querySelector(selector);
 const typed = $("#typed");
@@ -11,3 +12,4 @@ writeEffect(_name, __name, 15, false);
 writeEffect(typed, words, 8);
 
 sender;
+changeColor();
